@@ -1,16 +1,21 @@
 import pickle
 import pandas as pd
 import lightgbm as lgb
+import os
 from sklearn.preprocessing import RobustScaler
 from sklearn.feature_selection import RFE
 
-# Muat dataset yang digunakan dalam training model
+# Pastikan direktori models ada
+if not os.path.exists('app/models'):
+    os.makedirs('app/models')
+
+# Load dataset
 data = pd.read_csv('waterQuality.csv')
 
 # Print original column names for debugging
 print("Original columns:", data.columns.tolist())
 
-# 1. Bersihkan dataset dari nilai '#NUM!'
+# Bersihkan dataset dari nilai '#NUM!'
 if (data == '#NUM!').any().any():
     data = data.replace('#NUM!', float('nan'))
     data = data.dropna()
@@ -43,26 +48,20 @@ print("Number of selected features:", len(selected_feature_names))
 final_scaler = RobustScaler()
 final_scaler.fit(X[selected_feature_names])
 
-# Simpan objek-objek yang diperlukan
-with open('models/scaler.pkl', 'wb') as f:
+# Simpan model dan transformers
+with open('app/models/scaler.pkl', 'wb') as f:
     pickle.dump(final_scaler, f)
 
-with open('models/rfe.pkl', 'wb') as f:
+with open('app/models/rfe.pkl', 'wb') as f:
     pickle.dump(rfe, f)
 
-with open('models/selected_features.pkl', 'wb') as f:
+with open('app/models/selected_features.pkl', 'wb') as f:
     pickle.dump(selected_feature_names, f)
 
-# Verifikasi simpanan
-with open('models/selected_features.pkl', 'rb') as f:
-    loaded_features = pickle.load(f)
-print("\nVerifying saved features:", loaded_features)
-
-# Train model final dengan fitur terpilih
+# Train dan simpan model final
 X_selected = X_scaled_df[selected_feature_names]
 final_model = lgb.LGBMClassifier()
 final_model.fit(X_selected, y)
 
-# Simpan model final
-with open('models/lgbm_pipeline_model.pkl', 'wb') as f:
+with open('app/models/lgbm_pipeline_model.pkl', 'wb') as f:
     pickle.dump(final_model, f)

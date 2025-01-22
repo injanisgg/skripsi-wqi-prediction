@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skripsi-WQI Classify</title>
+
+    <link href="{{ url_for('static', filename='css/output.css') }}" rel="stylesheet">
+    <link rel="icon" href="{{ url_for('static', filename='img/unnes-logo.png') }}" class="16x16" type="image/png">
+
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&display=swap" rel="stylesheet">
+    <!-- end font -->
+
+    <!-- icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- end icon -->
+</head>
+<body>
+    <!-- navbar -->
+    <nav class="bg-white py-4 fixed top-0 left-0 right-0 z-20">
+        <ul class="flex mx-20 items-center xl:gap-80">
+            <li>
+                <div class="flex gap-2 items-center">
+                    <img src="{{ url_for('static', filename='img/unnes-logo.png') }}" class="w-8" alt="Unnes logo">
+                    <p class="text-black text-xl font-medium">Skripsi</p>
+                </div>
+            </li>
+            <div class="flex gap-10">
+                <li>
+                    <a href="/" class="text-black">Home</a>
+                </li>
+                <li>
+                    <a href="/" class="text-black">Classification</a>
+                </li>
+                <li>
+                    <a href="/" class="text-black">Model</a>
+                </li>
+                <li>
+                    <a href="/" class="text-black">About</a>
+                </li>
+            </div>
+        </ul>
+    </nav>
+    <!-- end of navbar -->
+
+    <!-- content header -->
+     <div class="bg-black h-[30rem] w-full xl:mt-20">
+        <div class="flex justify-around xl:p-10 items-center">
+            <div class="flex flex-col text-center items-center gap-5">
+                <div class="flex flex-col text-3xl font-bold gap-2">
+                    <span class="text-white">Water Quality Index</span>
+                    <span class="text-primary-green">Classification Using LGBM</span>
+                    <span class="text-white">with RFE Feature Selection</span>
+                    <span class="text-primary-green">SMOTE Oversampling Technique</span>
+                    <span class="text-white">and Optuna Hyperparamter Optimization</span>
+                </div>
+                <div class="flex flex-col font-sm text-white">
+                    <p>
+                        Written by Sugini Injani <br>
+                        Major in Informatics Engineering <br>
+                        Faculty Mathematics and Natural Sciences <br>
+                        Universitas Negeri Semarang <br> 
+                    </p>
+                </div>
+                <!-- button -->
+                <button class="xl:w-56 py-2 px-4 flex items-center justify-start gap-2 rounded-full bg-white border border-gray-300 hover:bg-gray-100">
+                    <i class="fa-solid fa-circle-chevron-right text-black"></i>
+                    <span>Start Classification</span>
+                </button>
+                <!-- end button -->
+            </div>
+            <img src="{{ url_for('static', filename='img/unnes-home.png') }}" class="w-96" alt="logo unnes">
+        </div>
+     </div>
+    <!-- end content 1 -->
+
+    <!-- content problem -->
+     <!-- title -->
+     <div class="flex flex-col gap-2 justify-center text-center xl:mt-10">
+        <p class="text-primary-green text-2xl font-bold">The Problem</p>
+        <p class="text-black text-3xl font-bold">
+            Why water quality index <br>
+            is important?
+        </p>
+     </div>
+     <!-- end title -->
+     <!-- card -->
+      <div class="flex flex-wrap justify-center xl:gap-x-20 xl:gap-y-10 xl:mx-20 xl:mt-10">
+        <div class="bg-slate-200 rounded-xl flex flex-col justify-start gap-2 p-4 xl:w-60">
+            <i class="fa-solid fa-briefcase-medical p-2 bg-black rounded-full text-white w-fit"></i>
+            <p class="text-black font-semibold">Health and Human Survival</p>
+            <p class="text-black text-xs">Clean and safe water is essential for sustaining human life and preventing the spread of diseases such as diarrhea, cholera, typhoid, and hepatitis. Proper sanitation safeguards communities from health risks caused by contaminated water.</p>
+        </div>
+        <div class="bg-slate-200 rounded-xl flex flex-col justify-start gap-2 p-4 xl:w-60">
+            <i class="fa-solid fa-briefcase-medical p-2 bg-black rounded-full text-white w-fit"></i>
+            <p class="text-black font-semibold">Health and Human Survival</p>
+            <p class="text-black text-xs">Clean and safe water is essential for sustaining human life and preventing the spread of diseases such as diarrhea, cholera, typhoid, and hepatitis. Proper sanitation safeguards communities from health risks caused by contaminated water.</p>
+        </div>
+        <div class="bg-slate-200 rounded-xl flex flex-col justify-start gap-2 p-4 xl:w-60">
+            <i class="fa-solid fa-briefcase-medical p-2 bg-black rounded-full text-white w-fit"></i>
+            <p class="text-black font-semibold">Health and Human Survival</p>
+            <p class="text-black text-xs">Clean and safe water is essential for sustaining human life and preventing the spread of diseases such as diarrhea, cholera, typhoid, and hepatitis. Proper sanitation safeguards communities from health risks caused by contaminated water.</p>
+        </div>
+        <div class="bg-slate-200 rounded-xl flex flex-col justify-start gap-2 p-4 xl:w-60">
+            <i class="fa-solid fa-briefcase-medical p-2 bg-black rounded-full text-white w-fit"></i>
+            <p class="text-black font-semibold">Health and Human Survival</p>
+            <p class="text-black text-xs">Clean and safe water is essential for sustaining human life and preventing the spread of diseases such as diarrhea, cholera, typhoid, and hepatitis. Proper sanitation safeguards communities from health risks caused by contaminated water.</p>
+        </div>
+        <div class="bg-slate-200 rounded-xl flex flex-col justify-start gap-2 p-4 xl:w-60">
+            <i class="fa-solid fa-briefcase-medical p-2 bg-black rounded-full text-white w-fit"></i>
+            <p class="text-black font-semibold">Health and Human Survival</p>
+            <p class="text-black text-xs">Clean and safe water is essential for sustaining human life and preventing the spread of diseases such as diarrhea, cholera, typhoid, and hepatitis. Proper sanitation safeguards communities from health risks caused by contaminated water.</p>
+        </div>
+        <div class="bg-slate-200 rounded-xl flex flex-col justify-start gap-2 p-4 xl:w-60">
+            <i class="fa-solid fa-briefcase-medical p-2 bg-black rounded-full text-white w-fit"></i>
+            <p class="text-black font-semibold">Health and Human Survival</p>
+            <p class="text-black text-xs">Clean and safe water is essential for sustaining human life and preventing the spread of diseases such as diarrhea, cholera, typhoid, and hepatitis. Proper sanitation safeguards communities from health risks caused by contaminated water.</p>
+        </div>
+      </div>
+      <!-- end card -->
+    <!-- end content problem -->
+
+    <!-- content quote pict -->
+      <div class="flex bg-black justify-center gap-10 items-center p-8 mt-10">
+        <img src="{{ url_for('static', filename='img/pict-home.png') }}" class="w-96" alt="people drinking">
+        <div class="flex flex-col gap-5">
+            <p class="text-3xl font-bold text-white items-center">
+                Monitoring water <br>
+                quality index
+            </p>
+            <p class="text-white w-96">
+                is a critical step in ensuring the sustainability of clean water resources and safeguarding public health. It helps identify water contamination and provides the basis for timely intervention to prevent the spread of waterborne diseases.
+            </p>
+            <!-- button -->
+            <button class="xl:w-56 py-2 px-4 flex items-center justify-start gap-2 rounded-full bg-white border border-gray-300 hover:bg-gray-100">
+                <i class="fa-solid fa-circle-chevron-right text-black"></i>
+                <span>Start Classification</span>
+            </button>
+            <!-- end button -->
+        </div>
+      </div>
+    <!-- end content quote pict -->
+
+    <!-- content unep -->
+     <!-- title -->
+     <div class="flex flex-col gap-2 justify-center text-center xl:mt-10">
+        <p class="text-primary-green text-2xl font-bold">United Nations Environment Programme</p>
+        <p class="text-black text-3xl font-bold">New Health Risk Hot Spot</p>
+     </div>
+     <!-- end title -->
+      <!-- card 2 -->
+       <div class="flex">
+        <div class="flex flex-col">
+            
+        </div>
+       </div>
+      <!-- end card 2 -->
+    <!-- end content unep -->
+</body>
+</html>

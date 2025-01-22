@@ -1,30 +1,28 @@
 import pickle
-from flask import Flask, request
+from flask import Flask, request, render_template
 import numpy as np
 import pandas as pd
 
 app = Flask(__name__)
 
 # Load all required models and transformers
-with open("models/lgbm_pipeline_model.pkl", "rb") as f:
+with open("app/models/lgbm_pipeline_model.pkl", "rb") as f:
     model = pickle.load(f)
 
-with open('models/scaler.pkl', 'rb') as f:
+with open('app/models/scaler.pkl', 'rb') as f:
     scaler = pickle.load(f)
 
-with open('models/selected_features.pkl', 'rb') as f:
+with open('app/models/selected_features.pkl', 'rb') as f:
     selected_features = pickle.load(f)
 
 print("Loaded selected features:", selected_features)
 
-app = Flask(__name__)
+# Tentukan folder template
+app = Flask(__name__, template_folder='app/templates', static_folder='app/static')
 
 @app.route("/")
 def index():
-    return {
-        "status": "SUCCESS",
-        "message": "Service is up"
-    }, 200
+    return render_template('index.html')
 
 @app.route('/predict')
 def predict():
