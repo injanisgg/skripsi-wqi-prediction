@@ -1,54 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Skripsi-WQI Classify</title>
-
-    <link href="{{ url_for('static', filename='css/output.css') }}" rel="stylesheet">
-    <link rel="icon" href="{{ url_for('static', filename='img/unnes-logo.png') }}" class="16x16" type="image/png">
-
-    <!-- font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&display=swap" rel="stylesheet">
-    <!-- end font -->
-
-    <!-- icon -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <!-- end icon -->
-</head>
-<body>
-    <!-- navbar -->
-    <nav class="bg-white py-4 fixed top-0 left-0 right-0 z-20">
-        <ul class="flex mx-20 items-center xl:gap-80">
-            <li>
-                <div class="flex gap-2 items-center">
-                    <img src="{{ url_for('static', filename='img/unnes-logo.png') }}" class="w-8" alt="Unnes logo">
-                    <p class="text-black text-xl font-medium">Skripsi</p>
-                </div>
-            </li>
-            <div class="flex gap-10">
-                <li>
-                    <a href="/" class="text-black">Home</a>
-                </li>
-                <li>
-                    <a href="/" class="text-black">Classification</a>
-                </li>
-                <li>
-                    <a href="/" class="text-black">Model</a>
-                </li>
-                <li>
-                    <a href="/" class="text-black">About</a>
-                </li>
-            </div>
-        </ul>
-    </nav>
-    <!-- end of navbar -->
-
+{% extends 'base.html' %}
+{% block content %}
     <!-- content header -->
-     <div class="bg-black h-[30rem] w-full xl:mt-20">
-        <div class="flex justify-around xl:p-10 items-center">
+     <div class="bg-black h-[35rem] w-full xl:mt-20">
+        <div class="flex justify-around xl:px-10 py-20 items-center">
             <div class="flex flex-col text-center items-center gap-5">
                 <div class="flex flex-col text-3xl font-bold gap-2">
                     <span class="text-white">Water Quality Index</span>
@@ -79,7 +33,7 @@
 
     <!-- content problem -->
      <!-- title -->
-     <div class="flex flex-col gap-2 justify-center text-center xl:mt-10">
+     <div class="flex flex-col gap-2 justify-center text-center xl:mt-20">
         <p class="text-primary-green text-2xl font-bold">The Problem</p>
         <p class="text-black text-3xl font-bold">
             Why water quality index <br>
@@ -92,39 +46,45 @@
         <div class="bg-slate-200 rounded-xl flex flex-col justify-start gap-2 p-4 xl:w-60">
             <i class="fa-solid fa-briefcase-medical p-2 bg-black rounded-full text-white w-fit"></i>
             <p class="text-black font-semibold">Health and Human Survival</p>
-            <p class="text-black text-xs">Clean and safe water is essential for sustaining human life and preventing the spread of diseases such as diarrhea, cholera, typhoid, and hepatitis. Proper sanitation safeguards communities from health risks caused by contaminated water.</p>
+            <p class="text-black text-xs">
+                Clean and safe water is essential for sustaining human life and preventing the spread of diseases such as diarrhea, cholera, typhoid, and hepatitis. Proper sanitation safeguards communities from health risks caused by contaminated water.
+            </p>
         </div>
         <div class="bg-slate-200 rounded-xl flex flex-col justify-start gap-2 p-4 xl:w-60">
-            <i class="fa-solid fa-briefcase-medical p-2 bg-black rounded-full text-white w-fit"></i>
-            <p class="text-black font-semibold">Health and Human Survival</p>
-            <p class="text-black text-xs">Clean and safe water is essential for sustaining human life and preventing the spread of diseases such as diarrhea, cholera, typhoid, and hepatitis. Proper sanitation safeguards communities from health risks caused by contaminated water.</p>
+            <i class="fa-solid fa-seedling p-2 bg-black rounded-full text-white w-fit"></i>
+            <p class="text-black font-semibold">Prevention of Global Environmental</p>
+            <p class="text-black text-xs">
+                According to WHO and UNICEF reports, poor water quality and inadequate sanitation result in millions of deaths annually worldwide, including thousands in Indonesia. Monitoring water quality is a crucial step in reducing these adverse effects.
+            </p>
         </div>
         <div class="bg-slate-200 rounded-xl flex flex-col justify-start gap-2 p-4 xl:w-60">
-            <i class="fa-solid fa-briefcase-medical p-2 bg-black rounded-full text-white w-fit"></i>
-            <p class="text-black font-semibold">Health and Human Survival</p>
-            <p class="text-black text-xs">Clean and safe water is essential for sustaining human life and preventing the spread of diseases such as diarrhea, cholera, typhoid, and hepatitis. Proper sanitation safeguards communities from health risks caused by contaminated water.</p>
+            <i class="fa-solid fa-umbrella p-2 bg-black rounded-full text-white w-fit"></i>
+            <p class="text-black font-semibold">Resilience to Climate Change</p>
+            <p class="text-black text-xs">
+                Water acts as a critical link between the environment, ecosystems, climate, and society. Monitoring water quality supports efforts to mitigate and adapt to the impacts of climate change.
+            </p>
         </div>
         <div class="bg-slate-200 rounded-xl flex flex-col justify-start gap-2 p-4 xl:w-60">
-            <i class="fa-solid fa-briefcase-medical p-2 bg-black rounded-full text-white w-fit"></i>
-            <p class="text-black font-semibold">Health and Human Survival</p>
-            <p class="text-black text-xs">Clean and safe water is essential for sustaining human life and preventing the spread of diseases such as diarrhea, cholera, typhoid, and hepatitis. Proper sanitation safeguards communities from health risks caused by contaminated water.</p>
+            <i class="fa-solid fa-droplet py-2 px-3 bg-black rounded-full text-white w-fit"></i>
+            <p class="text-black font-semibold">Sustainability of Water Resources</p>
+            <p class="text-black text-xs">Routine monitoring of WQI helps ensure the sustainability of clean water availability, both in quantity and quality, which is a fundamental need for environmental and human life.</p>
         </div>
         <div class="bg-slate-200 rounded-xl flex flex-col justify-start gap-2 p-4 xl:w-60">
-            <i class="fa-solid fa-briefcase-medical p-2 bg-black rounded-full text-white w-fit"></i>
-            <p class="text-black font-semibold">Health and Human Survival</p>
-            <p class="text-black text-xs">Clean and safe water is essential for sustaining human life and preventing the spread of diseases such as diarrhea, cholera, typhoid, and hepatitis. Proper sanitation safeguards communities from health risks caused by contaminated water.</p>
+            <i class="fa-solid fa-hand-holding-droplet p-2 bg-black rounded-full text-white w-fit"></i>
+            <p class="text-black font-semibold">Support for Water Purification Technologies</p>
+            <p class="text-black text-xs">Detecting contamination through WQI monitoring enables the development of water purification technologies, such as distillation and deionization, ensuring water is reused safely and efficiently.</p>
         </div>
         <div class="bg-slate-200 rounded-xl flex flex-col justify-start gap-2 p-4 xl:w-60">
-            <i class="fa-solid fa-briefcase-medical p-2 bg-black rounded-full text-white w-fit"></i>
-            <p class="text-black font-semibold">Health and Human Survival</p>
-            <p class="text-black text-xs">Clean and safe water is essential for sustaining human life and preventing the spread of diseases such as diarrhea, cholera, typhoid, and hepatitis. Proper sanitation safeguards communities from health risks caused by contaminated water.</p>
+            <i class="fa-solid fa-handshake p-2 bg-black rounded-full text-white w-fit"></i>
+            <p class="text-black font-semibold">Basis for Decision-Making in Water Management</p>
+            <p class="text-black text-xs">WQI provides actionable information for identifying water quality issues quickly, aiding decision-making in water resource management and public policy planning.</p>
         </div>
       </div>
       <!-- end card -->
     <!-- end content problem -->
 
     <!-- content quote pict -->
-      <div class="flex bg-black justify-center gap-10 items-center p-8 mt-10">
+      <div class="flex bg-black justify-center gap-10 items-center p-8 xl:mt-20">
         <img src="{{ url_for('static', filename='img/pict-home.png') }}" class="w-96" alt="people drinking">
         <div class="flex flex-col gap-5">
             <p class="text-3xl font-bold text-white items-center">
@@ -146,18 +106,33 @@
 
     <!-- content unep -->
      <!-- title -->
-     <div class="flex flex-col gap-2 justify-center text-center xl:mt-10">
+     <div class="flex flex-col gap-2 justify-center text-center xl:mt-20">
         <p class="text-primary-green text-2xl font-bold">United Nations Environment Programme</p>
         <p class="text-black text-3xl font-bold">New Health Risk Hot Spot</p>
      </div>
      <!-- end title -->
       <!-- card 2 -->
-       <div class="flex">
-        <div class="flex flex-col">
-            
+       <div class="flex justify-center items-center gap-10 mt-10">
+        <div class="flex flex-col bg-black xl:w-52 rounded-xl text-white px-4 py-8">
+            <p class="font-semibold text-lg">Linked</p>
+            <p class="text-sm pt-4 pb-20">Human health is directly or indirectly linked to water quality.</p>
+        </div>
+        <i class="fa-solid fa-arrow-right-long fa-2xl"></i>
+        <div class="flex flex-col bg-black xl:w-52 rounded-xl text-white px-4 py-8">
+            <p class="font-semibold text-lg">Vulnerable</p>
+            <p class="text-sm pt-4 pb-6">Countries with low freshwater monitoring capabilities are unprepared for the health impacts that will occur.</p>
+        </div>
+        <i class="fa-solid fa-arrow-right-long fa-2xl"></i>
+        <div class="flex flex-col bg-black xl:w-52 rounded-xl text-white px-4 py-8">
+            <p class="font-semibold text-lg">Crisis</p>
+            <p class="text-sm pt-4">Facing severe climate impacts while experiencing rapid population growth, urbanization, and increasing wastewater challenge.</p>
+        </div>
+        <i class="fa-solid fa-arrow-right-long fa-2xl"></i>
+        <div class="flex flex-col bg-black xl:w-52 rounded-xl text-white px-4 py-8">
+            <p class="font-semibold text-lg">Monitor</p>
+            <p class="text-sm pt-4">Prioritizing water quality monitor will help UNEP to understand how our freshwaters are changing and how to minimize health risk.</p>
         </div>
        </div>
       <!-- end card 2 -->
     <!-- end content unep -->
-</body>
-</html>
+{% endblock %}

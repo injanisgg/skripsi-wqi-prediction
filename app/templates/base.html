@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skripsi | WQI Classify</title>
+
+    <link href="{{ url_for('static', filename='css/output.css') }}" rel="stylesheet">
+    <link rel="icon" href="{{ url_for('static', filename='img/unnes-logo.png') }}" sizes="16x16" type="image/png">
+
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&display=swap" rel="stylesheet">
+    <!-- end font -->
+
+    <!-- icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- end icon -->
+</head>
+<body>
+    <!-- navbar -->
+    <nav class="bg-white py-4 fixed top-0 left-0 right-0 z-20">
+        <ul class="flex mx-20 items-center xl:gap-80">
+            <li>
+                <div class="flex gap-2 items-center">
+                    <img src="{{ url_for('static', filename='img/unnes-logo.png') }}" class="w-8" alt="Unnes logo">
+                    <p class="text-black text-xl font-medium">Skripsi</p>
+                </div>
+            </li>
+            <div class="flex gap-10">
+                <li>
+                    <a href="{{ url_for('index') }}" class="text-black">Home</a>
+                </li>
+                <li>
+                    <a href="{{ url_for('classify') }}" class="text-black">Classification</a>
+                </li>
+                <li>
+                    <a href="{{ url_for('model') }}" class="text-black">Model</a>
+                </li>
+                <li>
+                    <a href="{{ url_for('about') }}" class="text-black">About</a>
+                </li>
+            </div>
+        </ul>
+    </nav>
+    <!-- end of navbar -->
+
+    <!-- isi konten -->
+     {% block content %} {% endblock %}
+
+    <!-- footer -->
+    <footer class="flex flex-col justify-around bg-black h-96 w-full xl:mt-20">
+        <div class="flex justify-around items-center mx-20 my-10">
+            <div class="flex flex-col">
+                <div class="flex gap-2 items-center">
+                    <img src="{{ url_for('static', filename='img/unnes-logo.png') }}" class="w-8" alt="Unnes logo">
+                    <p class="text-white text-xl font-medium">Skripsi</p>
+                </div>
+                <p class="text-white w-80">Submitted as one of the requirements to obtain a Bachelor of Computer Science (S.Kom) degree</p>
+            </div>
+            <div class="flex flex-col text-white gap-5 cursor-pointer">
+                <p class="text-lg font-bold">Pages</p>
+                <p>Home</p>
+                <p>Classification</p>
+                <p>Model</p>
+                <p>About</p>
+            </div>
+            <div class="flex flex-col text-white gap-5">
+                <p class="text-lg font-bold">Contact</p>
+                <p>forggdev@gmail.com</p>
+                <a href="instagram.com/s.injzhani" target="_blank">Instagram</a>
+                <a href="github.com/injanisgg" target="_blank">Github</a>
+                <a href="linkedin.com/suginiinjani" target="_blank">LinkedIn</a>
+            </div>
+        </div>
+        <div class="border-b-2 xl:w-[68rem] mx-20 border-gray-400"></div>
+        <p class="text-white xl:ml-20">&copy; Copyright Sugini Injani 2025. All Rights Reserved.</p>
+     </footer>
+    <!-- end footer -->
+</body>
+</html>
