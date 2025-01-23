@@ -1,4 +1,76 @@
 {% extends 'base.html' %}
 {% block content %}
 <!-- content -->
+<!-- header -->
+<div class="flex flex-col justify-center items-center gap-5 w-[70rem] h-40 xl:mx-20 xl:mt-20 bg-black rounded-xl">
+    <h1 class="font-bold text-white text-5xl">Model Information</h1>
+    <p class="text-primary-green font-semibold">This page is for informing about the model details</p>
+</div>
+<!-- end header -->
+
+<!-- method -->
+<div class="flex flex-col justify-center items-center mt-20">
+    <h1 class="text-3xl font-bold text-black">Methods and Results</h1>
+</div>
+<div class="grid grid-cols-3 gap-10 w-[50rem] xl:mx-60 mt-10 text-center">
+    <div class="flex flex-col bg-black xl:w-52 xl:h-44 rounded-xl px-4 py-4">
+        <p class="font-semibold text-lg underline text-primary-green">Algorithm</p>
+        <p class="text-sm text-white pt-4">Light Gradient Boosting Machine (LGBM) Classifier</p>
+    </div>
+    <div class="flex flex-col bg-black xl:w-52 xl:h-44 rounded-xl px-4 py-4">
+        <p class="font-semibold text-lg underline text-primary-green">Scaler</p>
+        <p class="text-sm text-white pt-4">RobustScaler</p>
+    </div>
+    <div class="flex flex-col bg-black xl:w-52 xl:h-44 rounded-xl px-4 py-4">
+        <p class="font-semibold text-lg underline text-primary-green">Feature Selection</p>
+        <p class="text-sm text-white pt-4">Recursive Feature Elimination (RFE)</p>
+    </div>
+    <div class="flex flex-col bg-black xl:w-52 xl:h-44 rounded-xl px-4 py-4">
+        <p class="font-semibold text-lg underline text-primary-green">Data Augmentation</p>
+        <p class="text-sm text-white pt-4">Synthetic Minority Oversampling Technique (SMOTE)</p>
+    </div>
+    <div class="flex flex-col bg-black xl:w-52 xl:h-44 rounded-xl px-4 py-4">
+        <p class="font-semibold text-lg underline text-primary-green">Optimizer</p>
+        <p class="text-sm text-white pt-4">Optuna Hyperparamter Optimization</p>
+    </div>
+    <div class="flex flex-col bg-black xl:w-52 xl:h-44 rounded-xl px-4 py-4">
+        <p class="font-semibold text-lg underline text-primary-green">Dataset</p>
+        <p class="text-sm text-white pt-4">Water Quality from Kaggle, Mssartypants.</p>
+    </div>
+</div>
+<!-- end method -->
+
+<!-- result -->
+ <div class="flex flex-wrap gap-10 justify-center mt-20">
+    <div class="flex flex-col gap-2">
+        <div class="relative">
+            <img src="{{ url_for('static', filename='img/class-report.jpg') }}" alt="water" class="xl:w-[30rem] xl:h-64 object-cover rounded-xl border border-slate-500">
+        </div>
+        <p class="text-xl font-semibold text-black">Classification Report</p>
+        <p class="text-black">Water Quality from Kaggle, Mssartypants.</p>    
+    </div>
+    <div class="flex flex-col gap-2">
+        <div class="relative">
+            <img src="{{ url_for('static', filename='img/avg-cv.jpg') }}" alt="water" class="xl:w-[30rem] xl:h-64 object-cover rounded-xl border border-slate-500">
+        </div>
+        <p class="text-xl font-semibold text-black">Average Cross-validation</p>
+        <p class="text-black">Water Quality from Kaggle, Mssartypants.</p>    
+    </div>
+    <div class="flex flex-col gap-2">
+        <div class="relative">
+            <img src="{{ url_for('static', filename='img/conf-matrix.jpg') }}" alt="water" class="xl:w-[30rem] xl:h-64 object-cover rounded-xl border border-slate-500">
+        </div>
+        <p class="text-xl font-semibold text-black">Confussion Matrix</p>
+        <p class="text-black">Water Quality from Kaggle, Mssartypants.</p>    
+    </div>
+    <div class="flex flex-col gap-2">
+        <div class="relative">
+            <img src="{{ url_for('static', filename='img/dataset-cover.jpg') }}" alt="water" class="xl:w-[30rem] xl:h-64 object-cover rounded-xl border border-slate-500">
+        </div>
+        <p class="text-xl font-semibold text-black">Comparative Study</p>
+        <p class="text-black">Water Quality from Kaggle, Mssartypants.</p>    
+    </div>
+ </div>
+<!-- end result -->
+<!-- end content -->
 {% endblock %}
