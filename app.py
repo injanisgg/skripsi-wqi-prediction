@@ -1,5 +1,5 @@
 import pickle
-from flask import Flask, request, render_template
+from flask import Flask, request, render_template, jsonify
 import numpy as np
 import pandas as pd
 
@@ -25,11 +25,11 @@ def index():
 
 # route model
 @app.route("/model")
-def model():
+def render_model_page():
     return render_template('model.html')
 
 # route classification
-@app.route("/classify")
+@app.route("/classify", methods=['GET', 'POST'])
 def classify():
     return render_template('classification.html')
 
@@ -38,47 +38,69 @@ def classify():
 def about():
     return render_template('about.html')
 
-# route predict
-@app.route('/classify/predict')
+# @app.route("/classify/predict", methods=["POST"])
+# def predict():
+#     try:
+#         data = request.json
+#         print("Received data:", data)
+
+#         # Urutkan data sesuai dengan fitur model
+#         selected_features = [
+#             "aluminium", "ammonia", "arsenic", "barium", "cadmium", 
+#             "chloramine", "chromium", "copper", "bacteria", "viruses", 
+#             "lead", "nitrates", "nitrites", "perchlorate", "radium", 
+#             "selenium", "silver", "uranium"
+#         ]
+#         input_data = [data[feature] for feature in selected_features]
+
+#         # Skalakan data
+#         scaled_data = scaler.transform([input_data])
+
+#         # Prediksi
+#         prediction = model.predict(scaled_data)
+        
+#         print("Prediction:", prediction)  # Debugging log untuk hasil prediksi
+
+#         return jsonify({'prediction': prediction.tolist()})
+
+#     except Exception as e:
+#         print("Error:", str(e))
+#         return jsonify({'error': str(e)}), 500
+        
+@app.route("/classify/predict", methods=["POST"])
 def predict():
     try:
-        # Get parameters from request
-        args = request.args
-        
-        # Initialize input data with zeros
-        input_data = {feature: 0.0 for feature in selected_features}
-        
-        # Update with provided values
-        for feature in selected_features:
-            value = args.get(feature)
-            if value is not None:
-                try:
-                    input_data[feature] = float(value)
-                except ValueError:
-                    return {
-                        "status": "ERROR",
-                        "message": f"Invalid value for feature {feature}"
-                    }, 400
+        data = request.json
+        print("Received data:", data)
 
-        # Create DataFrame with selected features only
-        input_df = pd.DataFrame([input_data])
-        
-        # Scale the input data
-        input_scaled = scaler.transform(input_df)
-        
-        # Make prediction
-        prediction = model.predict(input_scaled)
-        
-        return {
-            'status': 'SUCCESS',
-            'prediction': int(prediction[0])
-        }
-        
+        # Urutkan data sesuai dengan fitur model
+        selected_features = [
+            "aluminium", "ammonia", "arsenic", "barium", "cadmium", 
+            "chloramine", "chromium", "copper", "bacteria", "viruses", 
+            "lead", "nitrates", "nitrites", "perchlorate", "radium", 
+            "selenium", "silver", "uranium"
+        ]
+        input_data = [data[feature] for feature in selected_features]
+
+        # Skalakan data
+        scaled_data = scaler.transform([input_data])
+
+        # Prediksi
+        prediction = model.predict(scaled_data)
+        print("Prediction:", prediction)  # Debugging log untuk hasil prediksi
+
+        # Konversi hasil prediksi menjadi label "Safe" atau "Not Safe"
+        prediction_label = 'Safe' if int(prediction[0]) == 1 else 'Not Safe'
+
+        return jsonify({'prediction': prediction_label})
+
     except Exception as e:
-        return {
-            'status': 'ERROR',
-            'message': str(e)
-        }, 400
+        print("Error:", str(e))
+        return jsonify({'error': str(e)}), 500
+        
+@app.route('/classify/features', methods=['GET'])
+def get_features():
+    return jsonify({'selected_features': selected_features})
 
 if __name__ == '__main__':
     app.run(debug=True)

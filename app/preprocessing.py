@@ -12,13 +12,16 @@ if not os.path.exists('app/models'):
 # Load dataset
 data = pd.read_csv('waterQuality.csv')
 
-# Print original column names for debugging
+# Debugging: Print original column names
 print("Original columns:", data.columns.tolist())
 
 # Bersihkan dataset dari nilai '#NUM!'
 if (data == '#NUM!').any().any():
     data = data.replace('#NUM!', float('nan'))
     data = data.dropna()
+
+# Konversi semua kolom ke tipe numerik (antisipasi kolom non-numerik)
+data = data.apply(pd.to_numeric, errors='coerce')
 
 # Pisahkan fitur dan target
 X = data.drop(columns=['is_safe'])

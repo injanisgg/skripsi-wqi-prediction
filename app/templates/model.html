@@ -64,28 +64,33 @@
             <img src="{{ url_for('static', filename='img/class-report.jpg') }}" alt="water" class="xl:w-[30rem] xl:h-64 object-cover rounded-xl border border-slate-500">
         </div>
         <p class="text-xl font-semibold text-black font-serif">Classification Report</p>
-        <p class="text-black font-sans">Water Quality from Kaggle, Mssartypants.</p>    
+        <p class="text-black font-sans xl:w-[30rem] text-justify">
+            Model memiliki performa sangat baik pada kelas "Not Safe" karena precision dan recall yang mendekati 1. Namun, performa untuk kelas "Safe" sedikit lebih rendah, menunjukkan potensi ketidakseimbangan data atau kesulitan model dalam mendeteksi kelas tersebut. Accuracy keseluruhan mencapai 97.31%.
+        </p>    
     </div>
     <div class="flex flex-col gap-2">
         <div class="relative">
             <img src="{{ url_for('static', filename='img/avg-cv.jpg') }}" alt="water" class="xl:w-[30rem] xl:h-64 object-cover rounded-xl border border-slate-500">
         </div>
         <p class="text-xl font-semibold text-black font-serif">Average Cross-validation</p>
-        <p class="text-black font-sans">Water Quality from Kaggle, Mssartypants.</p>    
+        <p class="text-black font-sans xl:w-[30rem] text-justify">
+            Model menunjukkan performa yang sangat baik dan konsisten pada data pelatihan berdasarkan rata-rata skor cross-validation. Hal ini mengindikasikan bahwa model memiliki generalisasi yang baik terhadap data pelatihan dan dapat diharapkan bekerja dengan baik pada data yang tidak terlihat, meskipun perlu diuji lebih lanjut untuk menghindari potensi overfitting.
+        </p>    
     </div>
     <div class="flex flex-col gap-2">
         <div class="relative">
             <img src="{{ url_for('static', filename='img/conf-matrix.jpg') }}" alt="water" class="xl:w-[30rem] xl:h-64 object-cover rounded-xl border border-slate-500">
         </div>
         <p class="text-xl font-semibold text-black font-serif">Confussion Matrix</p>
-        <p class="text-black font-sans">Water Quality from Kaggle, Mssartypants.</p>    
+        <p class="text-black font-sans xl:w-[30rem] text-justify">
+            Gambar ini menunjukkan bahwa model sangat akurat dalam mendeteksi kelas "Not Safe," dengan 1401 prediksi benar dan hanya 16 kesalahan. Pada kelas "Safe," model menghasilkan 155 prediksi benar tetapi masih memiliki 27 kesalahan. Meskipun data sudah seimbang menggunakan oversampling SMOTE, model tetap lebih unggul dalam mendeteksi "Not Safe." Hal ini mungkin disebabkan oleh kompleksitas fitur pada kelas "Safe," sehingga diperlukan analisis lebih lanjut untuk meningkatkan akurasi prediksi pada kelas tersebut.        </p>    
     </div>
     <div class="flex flex-col gap-2">
         <div class="relative">
             <img src="{{ url_for('static', filename='img/dataset-cover.jpg') }}" alt="water" class="xl:w-[30rem] xl:h-64 object-cover rounded-xl border border-slate-500">
         </div>
         <p class="text-xl font-semibold text-black font-serif">Comparative Study</p>
-        <p class="text-black font-sans">Water Quality from Kaggle, Mssartypants.</p>    
+        <p class="text-black font-sans xl:w-[30rem] text-justify">Water Quality from Kaggle, Mssartypants.</p>    
     </div>
  </div>
 <!-- end result -->
