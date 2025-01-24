@@ -7,7 +7,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        serif: ['Roboto serif']
+        serif: ['Roboto serif'],
+        sans: ['DM sans']
       },
       colors: {
         'primary-green': '#64CCC5',

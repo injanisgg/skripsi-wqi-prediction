@@ -12,6 +12,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&display=swap" rel="stylesheet">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
     <!-- end font -->
 
     <!-- icon -->
@@ -20,7 +24,7 @@
 </head>
 <body>
     <!-- navbar -->
-    <nav class="bg-white py-4 fixed top-0 left-0 right-0 z-20">
+    <nav class="bg-white py-4 fixed top-0 left-0 right-0 z-20 font-serif">
         <ul class="flex mx-20 items-center xl:gap-80">
             <li>
                 <div class="flex gap-2 items-center">
@@ -55,27 +59,27 @@
             <div class="flex flex-col">
                 <div class="flex gap-2 items-center">
                     <img src="{{ url_for('static', filename='img/unnes-logo.png') }}" class="w-8" alt="Unnes logo">
-                    <p class="text-white text-xl font-medium">Skripsi</p>
+                    <p class="text-white text-xl font-medium font-serif">Skripsi</p>
                 </div>
-                <p class="text-white w-80">Submitted as one of the requirements to obtain a Bachelor of Computer Science (S.Kom) degree</p>
+                <p class="text-white w-80 font-sans">Submitted as one of the requirements to obtain a Bachelor of Computer Science (S.Kom) degree</p>
             </div>
             <div class="flex flex-col text-white gap-5 cursor-pointer">
-                <p class="text-lg font-bold">Pages</p>
-                <p>Home</p>
-                <p>Classification</p>
-                <p>Model</p>
-                <p>About</p>
+                <p class="text-lg font-bold font-serif">Pages</p>
+                <p class="font-sans">Home</p>
+                <p class="font-sans">Classification</p>
+                <p class="font-sans">Model</p>
+                <p class="font-sans">About</p>
             </div>
             <div class="flex flex-col text-white gap-5">
-                <p class="text-lg font-bold">Contact</p>
-                <p>forggdev@gmail.com</p>
-                <a href="instagram.com/s.injzhani" target="_blank">Instagram</a>
-                <a href="github.com/injanisgg" target="_blank">Github</a>
-                <a href="linkedin.com/suginiinjani" target="_blank">LinkedIn</a>
+                <p class="text-lg font-bold font-serif">Contact</p>
+                <p class="font-sans">forggdev@gmail.com</p>
+                <a href="instagram.com/s.injzhani" target="_blank" class="font-sans">Instagram</a>
+                <a href="github.com/injanisgg" target="_blank" class="font-sans">Github</a>
+                <a href="linkedin.com/suginiinjani" target="_blank" class="font-sans">LinkedIn</a>
             </div>
         </div>
         <div class="border-b-2 xl:w-[68rem] mx-20 border-gray-400"></div>
-        <p class="text-white xl:ml-20">&copy; Copyright Sugini Injani 2025. All Rights Reserved.</p>
+        <p class="text-white xl:ml-20 font-serif">&copy; Copyright Sugini Injani 2025. All Rights Reserved.</p>
      </footer>
     <!-- end footer -->
 </body>
