@@ -4,6 +4,11 @@
       { "src": "app.py", "use": "@vercel/python" }
     ],
     "routes": [
-      { "src": "/(.*)", "dest": "/regression_dev.py" }
-    ]
+      { "src": "/(.*)", "dest": "/app.py" }
+    ],
+    "functions": {
+      "api/**": {
+        "excludeFiles": "{.next,node_modules,public}/**"
+      }
+    }
   }
