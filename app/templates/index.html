@@ -22,7 +22,7 @@
                 <!-- button -->
                 <button class="xl:w-56 py-2 px-4 flex items-center justify-start gap-2 rounded-full bg-white border border-gray-300 hover:bg-gray-100">
                     <i class="fa-solid fa-circle-chevron-right text-black"></i>
-                    <span class="font-sans">Start Classification</span>
+                    <a href="{{ url_for('classify') }}" class="font-sans hover:cursor-pointer">Start Classification</a>
                 </button>
                 <!-- end button -->
             </div>
@@ -97,7 +97,7 @@
             <!-- button -->
             <button class="xl:w-56 py-2 px-4 flex items-center justify-start gap-2 rounded-full bg-white border border-gray-300 hover:bg-gray-100">
                 <i class="fa-solid fa-circle-chevron-right text-black"></i>
-                <span class="font-sans">Start Classification</span>
+                <a href="{{ url_for('classify') }}" class="font-sans hover:cursor-pointer">Start Classification</a>
             </button>
             <!-- end button -->
         </div>
