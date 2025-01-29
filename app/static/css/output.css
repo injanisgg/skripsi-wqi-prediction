@@ -1077,6 +1077,16 @@ video {
     margin-right: 15rem;
   }
 
+  .xl\:mx-32 {
+    margin-left: 8rem;
+    margin-right: 8rem;
+  }
+
+  .xl\:mx-40 {
+    margin-left: 10rem;
+    margin-right: 10rem;
+  }
+
   .xl\:ml-20 {
     margin-left: 5rem;
   }
@@ -1144,6 +1154,11 @@ video {
 
   .xl\:gap-y-10 {
     row-gap: 2.5rem;
+  }
+
+  .xl\:gap-x-5 {
+    -moz-column-gap: 1.25rem;
+         column-gap: 1.25rem;
   }
 
   .xl\:px-10 {
