@@ -37,35 +37,6 @@ def classify():
 @app.route("/about")
 def about():
     return render_template('about.html')
-
-# @app.route("/classify/predict", methods=["POST"])
-# def predict():
-#     try:
-#         data = request.json
-#         print("Received data:", data)
-
-#         # Urutkan data sesuai dengan fitur model
-#         selected_features = [
-#             "aluminium", "ammonia", "arsenic", "barium", "cadmium", 
-#             "chloramine", "chromium", "copper", "bacteria", "viruses", 
-#             "lead", "nitrates", "nitrites", "perchlorate", "radium", 
-#             "selenium", "silver", "uranium"
-#         ]
-#         input_data = [data[feature] for feature in selected_features]
-
-#         # Skalakan data
-#         scaled_data = scaler.transform([input_data])
-
-#         # Prediksi
-#         prediction = model.predict(scaled_data)
-        
-#         print("Prediction:", prediction)  # Debugging log untuk hasil prediksi
-
-#         return jsonify({'prediction': prediction.tolist()})
-
-#     except Exception as e:
-#         print("Error:", str(e))
-#         return jsonify({'error': str(e)}), 500
         
 @app.route("/classify/predict", methods=["POST"])
 def predict():
