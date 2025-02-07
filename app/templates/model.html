@@ -61,7 +61,7 @@
  <div class="flex flex-wrap gap-10 justify-center mt-20">
     <div class="flex flex-col gap-2">
         <div class="relative">
-            <img src="{{ url_for('static', filename='img/conf-matrix.jpg') }}" alt="water" class="xl:w-[30rem] xl:h-64 object-cover rounded-xl border border-slate-500">
+            <img src="{{ url_for('static', filename='img/conf-matrix.png') }}" alt="water" class="xl:w-[30rem] xl:h-64 object-cover rounded-xl border border-slate-500">
         </div>
         <p class="text-xl font-semibold text-black font-serif">Confussion Matrix of Proposed Model</p>
         <p class="text-black font-sans xl:w-[30rem] text-justify">
@@ -76,19 +76,19 @@
     </div>
     <div class="flex flex-col gap-2">
         <div class="relative">
-            <img src="{{ url_for('static', filename='img/class-report.jpg') }}" alt="water" class="xl:w-[30rem] xl:h-64 object-cover rounded-xl border border-slate-500">
+            <img src="{{ url_for('static', filename='img/class-report.png') }}" alt="water" class="xl:w-[30rem] xl:h-64 object-cover rounded-xl border border-slate-500">
         </div>
         <p class="text-xl font-semibold text-black font-serif">Classification Report of Proposed Model</p>
         <p class="text-black font-sans xl:w-[30rem] text-justify">
-            The model performed very well for the “Not Safe” class as the precision and recall were close to 1. However, the performance for the “Safe” class was slightly lower, indicating potential data imbalance or difficulty for the model to detect the class. The overall accuracy reached 97.31%.</p>    
+            The model performed very well for the “Not Safe” class as the precision and recall were close to 1. However, the performance for the “Safe” class was slightly lower, indicating potential data imbalance or difficulty for the model to detect the class. The overall accuracy reached 97.44%.</p>    
     </div>
     <div class="flex flex-col gap-2">
         <div class="relative">
-            <img src="{{ url_for('static', filename='img/avg-cv.jpg') }}" alt="water" class="xl:w-[30rem] xl:h-64 object-cover rounded-xl border border-slate-500">
+            <img src="{{ url_for('static', filename='img/avg-cv.png') }}" alt="water" class="xl:w-[30rem] xl:h-64 object-cover rounded-xl border border-slate-500">
         </div>
         <p class="text-xl font-semibold text-black font-serif">Average Cross-validation of Proposed Model</p>
         <p class="text-black font-sans xl:w-[30rem] text-justify">
-            The model performed very well and consistently on the training data based on the average cross-validation score. This indicates that the model has good generalization to the training data and can be expected to perform well on unseen data, although it needs to be further tested to avoid potential overfitting.</p>    
+            The model performed very well and consistently on the training data based on the average cross-validation score with accuracy 98.00%. This indicates that the model has good generalization to the training data and can be expected to perform well on unseen data, although it needs to be further tested to avoid potential overfitting.</p>    
     </div>
  </div>
 <!-- end result -->
