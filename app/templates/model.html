@@ -65,14 +65,14 @@
         </div>
         <p class="text-xl font-semibold text-black font-serif">Confussion Matrix of Proposed Model</p>
         <p class="text-black font-sans xl:w-[30rem] text-justify">
-            This figure shows that the model is very accurate in detecting the class “Not Safe,” with 1401 correct predictions and only 16 errors. For the class "Safe," the model produced 155 correct predictions but still had 27 errors. Even though the data was balanced using SMOTE oversampling, the model was still superior in detecting "Not Safe." This may be due to the complexity of the features in the "Safe" class, so further analysis is needed to improve the prediction accuracy in this class.</p>
+            This figure shows that the model is very accurate in detecting the class “Not Safe,” with 1339 correct predictions and only 18 errors. For the class "Safe," the model produced 158 correct predictions but still had 24 errors. Even though the data was balanced using SMOTE oversampling, the model was still superior in detecting "Not Safe." This may be due to the complexity of the features in the "Safe" class, so further analysis is needed to improve the prediction accuracy in this class.</p>
     </div>
     <div class="flex flex-col gap-2">
         <div class="relative">
             <img src="{{ url_for('static', filename='img/comparative.png') }}" alt="water" class="xl:w-[30rem] xl:h-64 object-cover rounded-xl border border-slate-500">
         </div>
         <p class="text-xl font-semibold text-black font-serif">Accuracy Comparison</p>
-        <p class="text-black font-sans xl:w-[30rem] text-justify">Based on the graph, LGBM combined with the “RFE SMOTE OPTUNA” method gives the highest accuracy of 98.01%, indicating the combination of LGBM with RFE, SMOTE, and OPTUNA is very effective for Water Quality Index classification. The "SMOTE" method has the lowest accuracy, which is 97.15%. Overall, all methods produced high accuracy (above 97%), with the combination of techniques tending to improve model performance.</p>    
+        <p class="text-black font-sans xl:w-[30rem] text-justify">Based on the graph, LGBM combined with the “RFE SMOTE OPTUNA” method gives the highest accuracy of 97.37%, indicating the combination of LGBM with RFE, SMOTE, and OPTUNA is very effective for Water Quality Index classification. The "SMOTE Optuna" method has the lowest accuracy, which is 96.75%. Overall, all methods produced high accuracy (above 96.50%), with the combination of techniques tending to improve model performance.</p>    
     </div>
     <div class="flex flex-col gap-2">
         <div class="relative">
@@ -80,15 +80,15 @@
         </div>
         <p class="text-xl font-semibold text-black font-serif">Classification Report of Proposed Model</p>
         <p class="text-black font-sans xl:w-[30rem] text-justify">
-            The model performed very well for the “Not Safe” class as the precision and recall were close to 1. However, the performance for the “Safe” class was slightly lower, indicating potential data imbalance or difficulty for the model to detect the class. The overall accuracy reached 97.44%.</p>    
+            The classification report for the LGBMClassifier shows a high overall accuracy of 97.37% in predicting water quality as "Safe" or "Not Safe". The model performs exceptionally well for the "Not Safe" class, with a precision of 0.9831, recall of 0.9873, and F1-score of 0.9852. For the "Safe" class, the precision is 0.8977, recall 0.8681, and F1-score 0.8827, indicating slightly lower performance but still effective. The macro average F1-score of 0.9339 and weighted average F1-score of 0.9735 confirm that the model handles class imbalance well and delivers strong predictive performance.</p>    
     </div>
     <div class="flex flex-col gap-2">
         <div class="relative">
-            <img src="{{ url_for('static', filename='img/avg-cv.png') }}" alt="water" class="xl:w-[30rem] xl:h-64 object-cover rounded-xl border border-slate-500">
+            <img src="{{ url_for('static', filename='img/roc.png') }}" alt="water" class="xl:w-[30rem] xl:h-64 object-cover rounded-xl border border-slate-500">
         </div>
-        <p class="text-xl font-semibold text-black font-serif">Average Cross-validation of Proposed Model</p>
+        <p class="text-xl font-semibold text-black font-serif">ROC Curve of Proposed Model</p>
         <p class="text-black font-sans xl:w-[30rem] text-justify">
-            The model performed very well and consistently on the training data based on the average cross-validation score with accuracy 98.00%. This indicates that the model has good generalization to the training data and can be expected to perform well on unseen data, although it needs to be further tested to avoid potential overfitting.</p>    
+            The X-axis (False Positive Rate - FPR) indicates the proportion of "Not Safe" samples incorrectly classified as "Safe", while the Y-axis (True Positive Rate - TPR) shows the proportion of "Safe" samples correctly classified as "Safe". The gray diagonal line represents a random classifier with no predictive power (AUC = 0.5), while the blue curve illustrates the model’s performance. The AUC (Area Under the Curve) value of 0.9849 indicates that the model has an excellent ability to distinguish between safe and unsafe water conditions. A higher AUC value, close to 1.0, suggests that the model is highly accurate in predicting water quality. This result confirms that the LGBMClassifier performs exceptionally well in classifying water safety levels.</p>    
     </div>
  </div>
 <!-- end result -->
