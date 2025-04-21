@@ -65,14 +65,14 @@
         </div>
         <p class="text-xl font-semibold text-black font-serif">Confussion Matrix of Proposed Model</p>
         <p class="text-black font-sans xl:w-[30rem] text-justify">
-            This figure shows that the model is very accurate in detecting the class “Not Safe,” with 1397 correct predictions and only 20 errors. For the class "Safe," the model produced 160 correct predictions but still had 22 errors. Even though the data was balanced using SMOTE oversampling, the model was still superior in detecting "Not Safe." This may be due to the complexity of the features in the "Safe" class, so further analysis is needed to improve the prediction accuracy in this class.</p>
+            This figure shows that the model is very accurate in detecting the class “Not Safe,” with 1402 correct predictions and only 15 errors. For the class "Safe," the model produced 156 correct predictions but still had 26 errors. Even though the data was balanced using SMOTE oversampling, the model was still superior in detecting "Not Safe." This may be due to the complexity of the features in the "Safe" class, so further analysis is needed to improve the prediction accuracy in this class.</p>
     </div>
     <div class="flex flex-col gap-2">
         <div class="relative">
             <img src="{{ url_for('static', filename='img/comparative.png') }}" alt="water" class="xl:w-[30rem] xl:h-64 object-cover rounded-xl border border-slate-500">
         </div>
         <p class="text-xl font-semibold text-black font-serif">Accuracy Comparison</p>
-        <p class="text-black font-sans xl:w-[30rem] text-justify">Based on the graph, LGBM combined with the “RFE SMOTE OPTUNA” method gives the highest accuracy of 97.37%, indicating the combination of LGBM with RFE, SMOTE, and OPTUNA is very effective for Water Quality Index classification. The "SMOTE Optuna" method has the lowest accuracy, which is 96.75%. Overall, all methods produced high accuracy (above 96.50%), with the combination of techniques tending to improve model performance.</p>    
+        <p class="text-black font-sans xl:w-[30rem] text-justify">Based on the graph, LGBM combined with the “RFE SMOTE OPTUNA” method gives the highest accuracy of 97.44%, indicating the combination of LGBM with RFE, SMOTE, and OPTUNA is very effective for Water Quality Index classification. The "SMOTE Optuna" method has the lowest accuracy, which is 96.75%. Overall, all methods produced high accuracy (above 96.50%), with the combination of techniques tending to improve model performance.</p>    
     </div>
     <div class="flex flex-col gap-2">
         <div class="relative">
@@ -80,7 +80,7 @@
         </div>
         <p class="text-xl font-semibold text-black font-serif">Classification Report of Proposed Model</p>
         <p class="text-black font-sans xl:w-[30rem] text-justify">
-            The classification report for the LGBMClassifier shows a high overall accuracy of 97.37% in predicting water quality as "Safe" or "Not Safe". The model performs exceptionally well for the "Not Safe" class, with a precision of 98.45%, recall of 98.59%, and F1-score of 95.52%. For the "Safe" class, the precision is 88.89%, recall 87.91%, and F1-score 88.40%, indicating slightly lower performance but still effective. The macro average F1-score of 93.46% and weighted average F1-score of 97.37% confirm that the model handles class imbalance well and delivers strong predictive performance.</p>    
+            The classification report for the LGBMClassifier shows a high overall accuracy of 97.44% in predicting water quality as "Safe" or "Not Safe". The model performs exceptionally well for the "Not Safe" class, with a precision of 98.18%, recall of 98.94%, and F1-score of 98.56%. For the "Safe" class, the precision is 91.23%, recall 87.91%, and F1-score 85.71%, indicating slightly lower performance but still effective. The macro average F1-score of 88.39% and weighted average F1-score of 97.37% confirm that the model handles class imbalance well and delivers strong predictive performance.</p>    
     </div>
     <div class="flex flex-col gap-2">
         <div class="relative">
